@@ -7,8 +7,8 @@ import org.openqa.selenium.support.How;
 public class XeroBankAccountsLocators
     {
     @FindBy(
-        how   = How.ID,
-        using = "ext-gen335"
+        how   = How.XPATH,
+        using = "(.//*[normalize-space(text()) and normalize-space(.)='Hide Help'])[1]/following::span[1]"
         )
     public WebElement	AddBankAccounts;
     @FindBy(
