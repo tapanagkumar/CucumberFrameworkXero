@@ -24,7 +24,7 @@ public class SeleniumDriver {
 
        
 
-    	System.setProperty("webdriver.chrome.driver", "C:\\Users\\tapan.LAPTOP-L18RHV6N\\Downloads\\chromedriver.exe");
+    	System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\Executables\\chromedriver.exe");
         //driver = new FirefoxDriver();
     	driver = new ChromeDriver();
         driver.manage().window().maximize();
