@@ -1,17 +1,13 @@
 package steps;
 
-import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 
 import pages.actions.XeroHomePageActions;
 import pages.actions.XeroLoginPageActions;
-import pages.locators.XeroDashBoardLocators;
 import pages.actions.XeroBankAccountsPageActions;
 import pages.actions.XeroDashBoardActions;
 import utils.SeleniumDriver;
 import cucumber.api.PendingException;
-import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 //import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
@@ -68,12 +64,12 @@ public class AddAccount {
 		XeroBankAccountsPageActions.selectAccountType();
 		XeroBankAccountsPageActions.enterBSB();
 		XeroBankAccountsPageActions.enterAccountNumber();
+		XeroBankAccountsPageActions.clickContinue();
 	}
 
 	@Then("^I check if the account is really added or not\\.$")
 	public void i_check_if_the_account_is_really_added_or_not() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	System.out.println("Hello");
 	}
 
 }

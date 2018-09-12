@@ -64,5 +64,10 @@ public class XeroBankAccountsPageActions {
 
 		xeroBankAccountsLocators.AccountNumber.sendKeys(Long.toString(AccountNumber));
 	}
+	
+	public void clickContinue() {
+
+		xeroBankAccountsLocators.Continue.click();
+	}
 
 }
