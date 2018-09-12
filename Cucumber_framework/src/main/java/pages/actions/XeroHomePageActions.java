@@ -16,8 +16,7 @@ public class XeroHomePageActions {
 	}
 
 	public void clickOnLogin() {
-		// moveToCarsForSaleMenu();
-		/// carsGuideHomePageLocators.searchCarsLink.click();
+
 		xeroHomePageLocators.loginLink.click();
 
 	}

@@ -1,15 +1,16 @@
 package pages.actions;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import pages.locators.XeroHomePageLocators;
 import pages.locators.XeroLoginPageLocators;
 import utils.SeleniumDriver;
-
+import org.apache.commons.codec.binary.Base64;
 
 public class XeroLoginPageActions {
-	
+	String encodedBytes = "R293cmlfazEyMw==";
 	XeroLoginPageLocators xeroLoginPageLocators = null;
 	
 	public XeroLoginPageActions() {
@@ -19,29 +20,26 @@ public class XeroLoginPageActions {
 	}
 
 	public void enterUserName() {
-		// moveToCarsForSaleMenu();
-		/// carsGuideHomePageLocators.searchCarsLink.click();
+
 		xeroLoginPageLocators.loginField.sendKeys("tapanagkumar@gmail.com");
 
 	}
 	
 	public void enterPassword() {
-		// moveToCarsForSaleMenu();
-		/// carsGuideHomePageLocators.searchCarsLink.click();
-		xeroLoginPageLocators.passwordField.sendKeys("Gowri_k123");
+
+		byte[] decodedBytes = Base64.decodeBase64(encodedBytes);
+		xeroLoginPageLocators.passwordField.sendKeys(new String(decodedBytes));
 
 	}
 	
 	public void clickOnSubmit() {
-		// moveToCarsForSaleMenu();
-		/// carsGuideHomePageLocators.searchCarsLink.click();
+
 		xeroLoginPageLocators.loginSubmitButton.click();
 
 	}
 	
 	public void clickNotNow() {
-		// moveToCarsForSaleMenu();
-		/// carsGuideHomePageLocators.searchCarsLink.click();
+
 		xeroLoginPageLocators.notNow.click();
 	}
 
