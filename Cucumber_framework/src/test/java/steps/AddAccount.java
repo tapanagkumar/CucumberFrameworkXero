@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 
-import junit.framework.Assert;
 import pages.actions.XeroHomePageActions;
 import pages.actions.XeroLoginPageActions;
 import pages.locators.XeroDashBoardLocators;
