@@ -20,7 +20,7 @@ public class XeroDashBoardActions {
 	
 	public void clickOnAccounts()
 	{
-		//moveToCarsForSaleMenu();
+
 
 		xeroDashBoardLocators.accounts.click();
 		
@@ -34,7 +34,7 @@ public class XeroDashBoardActions {
 	
 	public void clickOnBankAccounts()
 	{
-		//moveToCarsForSaleMenu();
+
 		xeroDashBoardLocators.BankAccounts.click();
 		
 	}
