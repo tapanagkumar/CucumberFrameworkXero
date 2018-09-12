@@ -64,6 +64,10 @@ public class AddAccount {
 		XeroBankAccountsPageActions.searchBank();
 		XeroBankAccountsPageActions.clickOnBank();
 		XeroBankAccountsPageActions.enterAccountName();
+		XeroBankAccountsPageActions.clickOnAccountDropdown();
+		XeroBankAccountsPageActions.selectAccountType();
+		XeroBankAccountsPageActions.enterBSB();
+		XeroBankAccountsPageActions.enterAccountNumber();
 	}
 
 	@Then("^I check if the account is really added or not\\.$")
