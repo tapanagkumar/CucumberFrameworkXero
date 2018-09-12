@@ -1,46 +1,49 @@
 package pages.actions;
 
+import org.apache.commons.codec.binary.Base64;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+
 import pages.locators.XeroHomePageLocators;
 import pages.locators.XeroLoginPageLocators;
+
 import utils.SeleniumDriver;
-import org.apache.commons.codec.binary.Base64;
 
-public class XeroLoginPageActions {
-	String encodedBytes = "R293cmlfazEyMw==";
-	XeroLoginPageLocators xeroLoginPageLocators = null;
-	
-	public XeroLoginPageActions() {
+public class XeroLoginPageActions
+    {
+    String			encodedBytes          = "R293cmlfazEyMw==";
+    XeroLoginPageLocators	xeroLoginPageLocators = null;
 
-		this.xeroLoginPageLocators = new XeroLoginPageLocators();
-		PageFactory.initElements(SeleniumDriver.getDriver(), xeroLoginPageLocators);
-	}
+    public XeroLoginPageActions()
+        {
+        this.xeroLoginPageLocators = new XeroLoginPageLocators();
+        PageFactory.initElements(SeleniumDriver.getDriver(), xeroLoginPageLocators);
+        }
 
-	public void enterUserName() {
+    public void clickNotNow()
+        {
+        xeroLoginPageLocators.notNow.click();
+        }
 
-		xeroLoginPageLocators.loginField.sendKeys("tapanagkumar@gmail.com");
+    public void clickOnSubmit()
+        {
+        xeroLoginPageLocators.loginSubmitButton.click();
+        }
 
-	}
-	
-	public void enterPassword() {
+    public void enterPassword()
+        {
+        byte[]	decodedBytes = Base64.decodeBase64(encodedBytes);
 
-		byte[] decodedBytes = Base64.decodeBase64(encodedBytes);
-		xeroLoginPageLocators.passwordField.sendKeys(new String(decodedBytes));
+        xeroLoginPageLocators.passwordField.sendKeys(new String(decodedBytes));
+        }
 
-	}
-	
-	public void clickOnSubmit() {
+    public void enterUserName()
+        {
+        xeroLoginPageLocators.loginField.sendKeys("tapanagkumar@gmail.com");
+        }
+    }
 
-		xeroLoginPageLocators.loginSubmitButton.click();
 
-	}
-	
-	public void clickNotNow() {
-
-		xeroLoginPageLocators.notNow.click();
-	}
-
-}
+//~ Formatted by Jindent --- http://www.jindent.com

@@ -5,69 +5,77 @@ import java.util.Random;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import pages.locators.XeroBankAccountsLocators;
-import utils.SeleniumDriver;
 
 import com.github.javafaker.Faker;
 import com.github.javafaker.IdNumber;
 
-public class XeroBankAccountsPageActions {
-	String Bank = "ANZ (AU)";
-	XeroBankAccountsLocators xeroBankAccountsLocators = null;
-	Faker faker = new Faker();
-	Random generator = new Random();
-	String business = faker.name().fullName();
-	long AccountNumber = faker.number().randomNumber();
+import pages.locators.XeroBankAccountsLocators;
 
-	public XeroBankAccountsPageActions() {
-		this.xeroBankAccountsLocators = new XeroBankAccountsLocators();
-		PageFactory.initElements(SeleniumDriver.getDriver(), xeroBankAccountsLocators);
+import utils.SeleniumDriver;
 
-	}
+public class XeroBankAccountsPageActions
+    {
+    String			Bank                     = "ANZ (AU)";
+    XeroBankAccountsLocators	xeroBankAccountsLocators = null;
+    Faker			faker                    = new Faker();
+    Random			generator                = new Random();
+    String			business                 = faker.name().fullName();
+    long			AccountNumber            = faker.number().randomNumber();
 
-	public void clickAddBnkAccount() {
-		xeroBankAccountsLocators.AddBankAccounts.click();
-	}
+    public XeroBankAccountsPageActions()
+        {
+        this.xeroBankAccountsLocators = new XeroBankAccountsLocators();
+        PageFactory.initElements(SeleniumDriver.getDriver(), xeroBankAccountsLocators);
+        }
 
-	public void searchBank() {
-		xeroBankAccountsLocators.EnterBankName.sendKeys(Bank);
-	}
+    public void clickAddBnkAccount()
+        {
+        xeroBankAccountsLocators.AddBankAccounts.click();
+        }
 
-	public void clickOnBank() {
-		xeroBankAccountsLocators.ClickonBank.click();
-	}
+    public void clickContinue()
+        {
+        xeroBankAccountsLocators.Continue.click();
+        }
 
-	public void enterAccountName() {
+    public void clickOnAccountDropdown()
+        {
+        xeroBankAccountsLocators.ClickonAccountTypeMenu.click();
+        }
 
-		xeroBankAccountsLocators.EnterAccountName.sendKeys(business);
-	}
+    public void clickOnBank()
+        {
+        xeroBankAccountsLocators.ClickonBank.click();
+        }
 
-	public void clickOnAccountDropdown() {
+    public void enterAccountName()
+        {
+        xeroBankAccountsLocators.EnterAccountName.sendKeys(business);
+        }
 
-		xeroBankAccountsLocators.ClickonAccountTypeMenu.click();
-	}
+    public void enterAccountNumber()
+        {
+        xeroBankAccountsLocators.AccountNumber.sendKeys(Long.toString(AccountNumber));
+        }
 
-	public void selectAccountType() {
+    public void enterBSB()
+        {
+        // Generate a Random six digit number and assign it to a variable num'
+        int	BSBNumber = generator.nextInt(900000) + 100000;
 
-		xeroBankAccountsLocators.SelectAccountType.click();
-	}
+        xeroBankAccountsLocators.Bsb.sendKeys(Integer.toString(BSBNumber));
+        }
 
-	public void enterBSB() {
-		// Generate a Random six digit number and assign it to a variable num'
+    public void searchBank()
+        {
+        xeroBankAccountsLocators.EnterBankName.sendKeys(Bank);
+        }
 
-		int BSBNumber = generator.nextInt(900000) + 100000;
-		
-		xeroBankAccountsLocators.Bsb.sendKeys(Integer.toString(BSBNumber));
-	}
-	
-	public void enterAccountNumber() {
+    public void selectAccountType()
+        {
+        xeroBankAccountsLocators.SelectAccountType.click();
+        }
+    }
 
-		xeroBankAccountsLocators.AccountNumber.sendKeys(Long.toString(AccountNumber));
-	}
-	
-	public void clickContinue() {
 
-		xeroBankAccountsLocators.Continue.click();
-	}
-
-}
+//~ Formatted by Jindent --- http://www.jindent.com
