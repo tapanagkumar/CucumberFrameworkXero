@@ -1,6 +1,6 @@
 #Author: tapanagkumar@gmail.com
 @Add-Account
-Feature: Test to adding ANZ(AU) account
+Feature: Test to add ANZ(AU) account
   In order to add ANZ(AU) account
   As a User
   I should have a valid userid and password

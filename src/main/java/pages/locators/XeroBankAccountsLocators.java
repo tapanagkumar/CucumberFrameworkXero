@@ -51,6 +51,11 @@ public class XeroBankAccountsLocators
         using = "common-button-submit-1015-btnInnerEl"
         )
     public WebElement	Continue;
+    @FindBy(
+        how   = How.CLASS_NAME,
+        using = "message"
+        )
+    public WebElement	CheckifAdded;
     }
 
 

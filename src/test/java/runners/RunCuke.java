@@ -46,18 +46,15 @@ public class RunCuke extends AbstractTestNGCucumberTests
         ExtentCucumberFormatter.loadConfig(new File("src/test/resources/extent-config.xml"));
 
         // User can add the system information as follows
-        ExtentCucumberFormatter.addSystemInfo("Browser Name", "Firefox");
-        ExtentCucumberFormatter.addSystemInfo("Browser version", "v31.0");
-        ExtentCucumberFormatter.addSystemInfo("Selenium version", "v2.53.0");
+        ExtentCucumberFormatter.addSystemInfo("Browser Name", "Chrome");
+        ExtentCucumberFormatter.addSystemInfo("Browser version", "v69.0");
+        ExtentCucumberFormatter.addSystemInfo("Selenium version", "v3.14.0");
 
         // Also you can add system information using a hash map
         Map	systemInfo = new HashMap();
 
-        systemInfo.put("Cucumber version", "v1.2.3");
+        systemInfo.put("Cucumber version", "v1.2.5");
         systemInfo.put("Extent Cucumber Reporter version", "v1.1.0");
         ExtentCucumberFormatter.addSystemInfo(systemInfo);
         }
     }
-
-
-//~ Formatted by Jindent --- http://www.jindent.com
