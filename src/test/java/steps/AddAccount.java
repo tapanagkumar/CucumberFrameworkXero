@@ -43,7 +43,7 @@ public class AddAccount
     @Then("^I check if the account is really added or not\\.$")
     public void i_check_if_the_account_is_really_added_or_not() throws Throwable
         {
-        System.out.println("Hello");
+    	XeroBankAccountsPageActions.verifyIfAccountAdded();
         }
 
     @Given("^I am on the Home Page \"([^\"]*)\" of Website$")
