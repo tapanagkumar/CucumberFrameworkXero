@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="36703" started-at="2018-09-15T20:03:54Z" finished-at="2018-09-15T20:04:31Z">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.RunCuke@5649fd9b]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="Test" duration-ms="36703" started-at="2018-09-15T20:03:54Z" finished-at="2018-09-15T20:04:31Z">
+      <class name="runners.RunCuke">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runners.RunCuke@5649fd9b]" name="setUpClass" is-config="true" duration-ms="410" started-at="2018-09-16T06:03:54Z" finished-at="2018-09-16T06:03:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:runners.RunCuke@5649fd9b]" name="setup" is-config="true" duration-ms="372" started-at="2018-09-16T06:03:55Z" finished-at="2018-09-16T06:03:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.RunCuke@5649fd9b]" name="feature" duration-ms="35468" started-at="2018-09-16T06:03:55Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2018-09-16T06:04:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Test to adding ANZ(AU) account]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runners.RunCuke@5649fd9b]" name="tearDownClass" is-config="true" duration-ms="318" started-at="2018-09-16T06:04:31Z" finished-at="2018-09-16T06:04:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- runners.RunCuke -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
