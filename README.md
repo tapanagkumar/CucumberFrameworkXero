@@ -53,9 +53,7 @@ This project demonstrates adding ANZ bank account inside Xero organisation using
 - You can start out by looking at `\src\test\resources\FeatureFiles`.
 
 
-
-### Running features using Maven
-- Goto project directory.
+From Command line goto project directory.
 - Use "mvn test" command to run features.
 
 
