@@ -54,7 +54,7 @@ This project demonstrates adding ANZ bank account inside Xero organisation using
 
 
 From Command line goto project directory.
-- Use "mvn test" command to run features.
+- Use `mvn test` command to run features.
 
 
 
