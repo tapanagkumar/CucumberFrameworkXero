@@ -13,7 +13,7 @@ import utils.SeleniumDriver;
 
 public class XeroLoginPageActions
     {
-    String			encodedBytes          = "R293cmlfazEyMw==";
+    String			encodedBytes          = "WGVyb18xMjM=";
     XeroLoginPageLocators	xeroLoginPageLocators = null;
 
     public XeroLoginPageActions()
