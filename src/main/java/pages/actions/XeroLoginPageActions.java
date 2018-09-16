@@ -13,8 +13,9 @@ import utils.SeleniumDriver;
 
 public class XeroLoginPageActions
     {
-    String			encodedBytes          = "WGVyb18xMjM=";
+
     XeroLoginPageLocators	xeroLoginPageLocators = null;
+
 
     public XeroLoginPageActions()
         {
@@ -32,16 +33,18 @@ public class XeroLoginPageActions
         xeroLoginPageLocators.loginSubmitButton.click();
         }
 
-    public void enterPassword()
+    public void enterPassword(String password)
         {
-        byte[]	decodedBytes = Base64.decodeBase64(encodedBytes);
+    
+		byte[]	password1 = Base64.decodeBase64(password);
 
-        xeroLoginPageLocators.passwordField.sendKeys(new String(decodedBytes));
+        //xeroLoginPageLocators.passwordField.sendKeys(new String(password1));
+    	xeroLoginPageLocators.passwordField.sendKeys(new String(password1));
         }
 
-    public void enterUserName()
+    public void enterUserName(String username)
         {
-        xeroLoginPageLocators.loginField.sendKeys("tapanagkumar@gmail.com");
+        xeroLoginPageLocators.loginField.sendKeys(username);
         }
     }
 

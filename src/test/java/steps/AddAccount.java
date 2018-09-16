@@ -25,6 +25,7 @@ public class AddAccount
     XeroDashBoardActions	XeroDashBoardActions        = new XeroDashBoardActions();
     XeroBankAccountsPageActions	XeroBankAccountsPageActions = new XeroBankAccountsPageActions();
 
+
     @And("^Add an ANZ\\(AU\\) Account$")
     public void add_an_ANZ_AU_Account() throws Throwable
         {
@@ -57,17 +58,18 @@ public class AddAccount
     public void i_successfully_login() throws Throwable
         {
         // Write code here that turns the phrase above into concrete actions
-        XeroLoginPageActions.enterUserName();
-        XeroLoginPageActions.enterPassword();
+      
         XeroLoginPageActions.clickOnSubmit();
         XeroLoginPageActions.clickNotNow();
         }
 
-    @When("^I click on the Login Button$")
-    public void i_validate_the_page_title() throws Throwable
-        {
+    @When("^I enter \"([^\"]*)\" and \"([^\"]*)\" and click on the Login Button$")
+    public void i_enter_and_and_click_on_the_Login_Button(String username, String password) throws Throwable {
+    	XeroHomePageActions.clickOnLogin();
         // Write code here that turns the phrase above into concrete actions
-        XeroHomePageActions.clickOnLogin();
+        XeroLoginPageActions.enterUserName(username);
+        XeroLoginPageActions.enterPassword(password);
+        
         }
 
     @And("^Navigate to Bank Accounts page$")
