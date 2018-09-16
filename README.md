@@ -108,4 +108,4 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 
 ### HTML Reports
 
-- HTML reports can be viewed from `\target\Extent_Reports' location
+- HTML reports can be viewed from `\target\Extent_Reports' location`
