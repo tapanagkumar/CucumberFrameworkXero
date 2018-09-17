@@ -1,17 +1,18 @@
 package pages.actions;
 
-import static org.testng.Assert.assertEquals;
-
 import java.util.Random;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 
+import static org.testng.Assert.assertEquals;
+
 import com.github.javafaker.Faker;
 import com.github.javafaker.IdNumber;
 
 import pages.locators.XeroBankAccountsLocators;
+
 import utils.SeleniumDriver;
 
 public class XeroBankAccountsPageActions
@@ -76,11 +77,11 @@ public class XeroBankAccountsPageActions
         {
         xeroBankAccountsLocators.SelectAccountType.click();
         }
-    
+
     public void verifyIfAccountAdded()
-    {
-    assertEquals(business+" has been added.", xeroBankAccountsLocators.CheckifAdded.getText());
-    }
+        {
+        assertEquals(business + " has been added.", xeroBankAccountsLocators.CheckifAdded.getText());
+        }
     }
 
 
