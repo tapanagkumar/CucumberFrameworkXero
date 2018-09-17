@@ -25,7 +25,6 @@ public class AddAccount
     XeroDashBoardActions	XeroDashBoardActions        = new XeroDashBoardActions();
     XeroBankAccountsPageActions	XeroBankAccountsPageActions = new XeroBankAccountsPageActions();
 
-
     @And("^Add an ANZ\\(AU\\) Account$")
     public void add_an_ANZ_AU_Account() throws Throwable
         {
@@ -44,7 +43,17 @@ public class AddAccount
     @Then("^I check if the account is really added or not\\.$")
     public void i_check_if_the_account_is_really_added_or_not() throws Throwable
         {
-    	XeroBankAccountsPageActions.verifyIfAccountAdded();
+        XeroBankAccountsPageActions.verifyIfAccountAdded();
+        }
+
+    @When("^I enter \"([^\"]*)\" and \"([^\"]*)\" and click on the Login Button$")
+    public void i_enter_and_and_click_on_the_Login_Button(String username, String password) throws Throwable
+        {
+        XeroHomePageActions.clickOnLogin();
+
+        // Write code here that turns the phrase above into concrete actions
+        XeroLoginPageActions.enterUserName(username);
+        XeroLoginPageActions.enterPassword(password);
         }
 
     @Given("^I am on the Home Page \"([^\"]*)\" of Website$")
@@ -58,18 +67,16 @@ public class AddAccount
     public void i_successfully_login() throws Throwable
         {
         // Write code here that turns the phrase above into concrete actions
-      
         XeroLoginPageActions.clickOnSubmit();
-        XeroLoginPageActions.clickNotNow();
-        }
-
-    @When("^I enter \"([^\"]*)\" and \"([^\"]*)\" and click on the Login Button$")
-    public void i_enter_and_and_click_on_the_Login_Button(String username, String password) throws Throwable {
-    	XeroHomePageActions.clickOnLogin();
-        // Write code here that turns the phrase above into concrete actions
-        XeroLoginPageActions.enterUserName(username);
-        XeroLoginPageActions.enterPassword(password);
-        
+        XeroLoginPageActions.anotherAuthenticationMethod();
+        XeroLoginPageActions.securityQuestions();
+        System.out.println("Thinking");
+        Thread.sleep(2000);
+        XeroLoginPageActions.answerQuestionsOne();
+        System.out.println("Thinking Again");
+        Thread.sleep(2000);
+        XeroLoginPageActions.answerQuestionsTwo();
+        XeroLoginPageActions.clickLoginAfterAnswering();
         }
 
     @And("^Navigate to Bank Accounts page$")
