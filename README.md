@@ -17,7 +17,7 @@ This project demonstrates adding ANZ bank account inside Xero organisation using
 - Install Maven and set path.
 - Clone respective repository or download zip.
 	- maven : https://github.com/tapanagkumar/CucumberFrameworkXero.git
- - Copy chromedriver.exe to `\src\test\resources\Executables`
+ - Copy chromedriver.exe to `c:\` drive
 
 
  ### Directory layout
