@@ -18,9 +18,9 @@ public class SeleniumDriver
     private SeleniumDriver()
         {
         // Path for the Chrome driver
-        System.setProperty("webdriver.chrome.driver",
-                           System.getProperty("user.dir") + "\\src\\test\\resources\\Executables\\chromedriver.exe");
-
+        /*System.setProperty("webdriver.chrome.driver",
+                           System.getProperty("user.dir") + "\\src\\test\\resources\\Executables\\chromedriver.exe");*/
+    	System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
         // driver = new FirefoxDriver();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
