@@ -11,10 +11,10 @@ Feature: Test to add ANZ(AU) account
     When I enter "<email>" and "<password>" click on the Login Button
     And I successfully login
     And Navigate to Bank Accounts page
-    And Add an ANZ(AU) Account
+    And Add an "<Bank>" Account
     Then I check if the account is really added or not.
 
     Examples: 
-      | email                  | password     |
-      | tapanagkumar@ymail.com | WGVyb18xMjM= |
-      | tapanagkumar@gmail.com | WGVyb18xMjM= |
+      | email                  | password     |Bank|
+      | tapanagkumar@ymail.com | WGVyb18xMjM= |ANZ (AU)|
+      | tapanagkumar@gmail.com | WGVyb18xMjM= |Westpac (AU)|
