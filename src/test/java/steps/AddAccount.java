@@ -70,11 +70,7 @@ public class AddAccount
         XeroLoginPageActions.clickOnSubmit();
         XeroLoginPageActions.anotherAuthenticationMethod();
         XeroLoginPageActions.securityQuestions();
-        System.out.println("Thinking");
-        Thread.sleep(2000);
         XeroLoginPageActions.answerQuestionsOne();
-        System.out.println("Thinking Again");
-        Thread.sleep(2000);
         XeroLoginPageActions.answerQuestionsTwo();
         XeroLoginPageActions.clickLoginAfterAnswering();
         }

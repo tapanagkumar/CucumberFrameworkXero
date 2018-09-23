@@ -31,7 +31,6 @@ public class XeroLoginPageActions
 
     public void answerQuestionsOne()
         {
-    	
         if (xeroLoginPageLocators.questionOne.getText().contains("Which movie scared you most as a child?"))
             {
             xeroLoginPageLocators.inputOne.sendKeys("Evil Dead");
@@ -40,11 +39,11 @@ public class XeroLoginPageActions
             {
             xeroLoginPageLocators.inputOne.sendKeys("Picasso");
             }
-        else 
+        else
             {
             xeroLoginPageLocators.inputOne.sendKeys("Ferrari");
             }
-        
+
         System.out.println(xeroLoginPageLocators.questionOne.getText());
         }
 
@@ -58,10 +57,11 @@ public class XeroLoginPageActions
             {
             xeroLoginPageLocators.inputTwo.sendKeys("Picasso");
             }
-        else 
+        else
             {
             xeroLoginPageLocators.inputTwo.sendKeys("Ferrari");
             }
+
         System.out.println(xeroLoginPageLocators.questionTwo.getText());
         }
 
