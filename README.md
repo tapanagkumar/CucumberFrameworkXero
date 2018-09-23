@@ -72,40 +72,30 @@ From Command line goto project directory.
 ### Results
 
 ```
--------------------------------------------------------
- T E S T S
--------------------------------------------------------
-Running TestSuite
-#Author: tapanagkumar@gmail.com
-@Add-Account
-Feature: Test to add ANZ(AU) account
-  In order to add ANZ(AU) account
-  As a User
-  I should have a valid userid and password
-Before
-Starting ChromeDriver 2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e) on port 11436
-Only local connections are allowed.
-Sep 16, 2018 9:36:35 AM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-Window ->CDwindow-1BFDE2A32ABE4EB9264FE32F35DFF430
-https://www.xero.com/au/
-ChromeDriver: chrome on XP (a467ae383919c4c305e7b67c6205bab7)
-false
+  @Add-Account @Add-Account-Bank
+  Scenario Outline: In should be able to add a Bank account                            # AddAccount.feature:18
+    Given I am on the Home Page "https://www.xero.com/au/" of Website                  # AddAccount.i_navigate_to_xero_page(String)
+    When I enter "tapanagkumar@ymail.com" and "WGVyb18xMjM=" click on the Login Button # AddAccount.i_enter_and_click_on_the_Login_Button(String,String)
+    And I successfully login                                                           # AddAccount.i_successfully_login()
+    And Navigate to Bank Accounts page                                                 # AddAccount.navigate_to_Bank_Accounts_page()
+    And Add an "ANZ (AU)" Account                                                      # AddAccount.add_an_Account(String)
+    Then I check if the account is really added or not.                                # AddAccount.i_check_if_the_account_is_really_added_or_not()
 
-  @Add-Account-ANZ
-  Scenario: In order to add a ANZ(AU) account                         # AddAccount.feature:9
-    Given I am on the Home Page "https://www.xero.com/au/" of Website # AddAccount.i_navigate_to_xero_page(String)
-    When I click on the Login Button                                  # AddAccount.i_validate_the_page_title()
-    And I successfully login                                          # AddAccount.i_successfully_login()
-    And Navigate to Bank Accounts page                                # AddAccount.navigate_to_Bank_Accounts_page()
-    And Add an ANZ(AU) Account                                        # AddAccount.add_an_ANZ_AU_Account()
-    Then I check if the account is really added or not.               # AddAccount.i_check_if_the_account_is_really_added_or_not()
 
-1 Scenarios (1 passed)
-6 Steps (6 passed)
-0m34.928s
+  @Add-Account @Add-Account-Bank
+  Scenario Outline: In should be able to add a Bank account                            # AddAccount.feature:19
+    Given I am on the Home Page "https://www.xero.com/au/" of Website                  # AddAccount.i_navigate_to_xero_page(String)
+    When I enter "tapanagkumar@gmail.com" and "WGVyb18xMjM=" click on the Login Button # AddAccount.i_enter_and_click_on_the_Login_Button(String,String)
+    And I successfully login                                                           # AddAccount.i_successfully_login()
+    And Navigate to Bank Accounts page                                                 # AddAccount.navigate_to_Bank_Accounts_page()
+    And Add an "Westpac (AU)" Account                                                  # AddAccount.add_an_Account(String)
+    Then I check if the account is really added or not.                                # AddAccount.i_check_if_the_account_is_really_added_or_not()
 
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 36.715 sec - in TestSuite
+2 Scenarios (2 passed)
+12 Steps (12 passed)
+1m47.085s
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 109.304 sec - in TestSuite
 
 Results :
 
@@ -114,7 +104,6 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-
 ```
 
 ### HTML Reports
