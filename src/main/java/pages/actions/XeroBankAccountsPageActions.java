@@ -20,7 +20,7 @@ import utils.*;
 
 public class XeroBankAccountsPageActions
     {
-    String			Bank                     = "ANZ (AU)";
+   
     XeroBankAccountsLocators	xeroBankAccountsLocators = null;
     Faker			faker                    = new Faker();
     Random			generator                = new Random();
@@ -75,7 +75,7 @@ public class XeroBankAccountsPageActions
         xeroBankAccountsLocators.Bsb.sendKeys(Integer.toString(BSBNumber));
         }
 
-    public void searchBank()
+    public void searchBank(String Bank)
         {
         SeleniumDriver.waitForPageToLoad();
         SeleniumHelper.isVisableAndClickable(xeroBankAccountsLocators.EnterBankName);

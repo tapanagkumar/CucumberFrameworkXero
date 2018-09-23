@@ -28,12 +28,12 @@ public class AddAccount
     XeroDashBoardActions	XeroDashBoardActions        = new XeroDashBoardActions();
     XeroBankAccountsPageActions	XeroBankAccountsPageActions = new XeroBankAccountsPageActions();
 
-    @And("^Add an ANZ\\(AU\\) Account$")
-    public void add_an_ANZ_AU_Account() throws Throwable
-        {
+    @When("^Add an \"([^\"]*)\" Account$")
+    public void add_an_Account(String Bank) throws Throwable {
+
         // Write code here that turns the phrase above into concrete actions
         XeroBankAccountsPageActions.clickAddBnkAccount();
-        XeroBankAccountsPageActions.searchBank();
+        XeroBankAccountsPageActions.searchBank(Bank);
         XeroBankAccountsPageActions.clickOnBank();
         XeroBankAccountsPageActions.enterAccountName();
         XeroBankAccountsPageActions.clickOnAccountDropdown();

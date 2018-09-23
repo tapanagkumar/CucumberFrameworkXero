@@ -27,7 +27,7 @@ public class SeleniumDriver
         final ChromeOptions	chromeOptions  = new ChromeOptions();
         final FirefoxOptions	firefoxOptions = new FirefoxOptions();
 
-        chromeOptions.setHeadless(false);
+        chromeOptions.setHeadless(true);
         firefoxOptions.setHeadless(false);
 
          driver = new ChromeDriver(chromeOptions);
