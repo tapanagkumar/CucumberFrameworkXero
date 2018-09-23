@@ -1,7 +1,10 @@
 package steps;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 
+import cucumber.api.DataTable;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 
@@ -46,13 +49,13 @@ public class AddAccount
         XeroBankAccountsPageActions.verifyIfAccountAdded();
         }
 
-    @When("^I enter \"([^\"]*)\" and \"([^\"]*)\" and click on the Login Button$")
-    public void i_enter_and_and_click_on_the_Login_Button(String username, String password) throws Throwable
+    @When("^I enter \"([^\"]*)\" and \"([^\"]*)\" click on the Login Button$")
+    public void i_enter_and_click_on_the_Login_Button(String email, String password) throws Throwable
         {
         XeroHomePageActions.clickOnLogin();
 
         // Write code here that turns the phrase above into concrete actions
-        XeroLoginPageActions.enterUserName(username);
+        XeroLoginPageActions.enterUserName(email);
         XeroLoginPageActions.enterPassword(password);
         }
 

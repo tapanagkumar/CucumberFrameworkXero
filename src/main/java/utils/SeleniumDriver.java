@@ -5,14 +5,11 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import io.github.bonigarcia.webdrivermanager.*;
 
 public class SeleniumDriver
     {
@@ -30,11 +27,11 @@ public class SeleniumDriver
         final ChromeOptions	chromeOptions  = new ChromeOptions();
         final FirefoxOptions	firefoxOptions = new FirefoxOptions();
 
-        chromeOptions.setHeadless(true);
-        firefoxOptions.setHeadless(true);
+        chromeOptions.setHeadless(false);
+        firefoxOptions.setHeadless(false);
 
-        // driver = new ChromeDriver(chromeOptions);
-        driver = new FirefoxDriver(firefoxOptions);
+         driver = new ChromeDriver(chromeOptions);
+        //driver = new FirefoxDriver(firefoxOptions);
         driver.manage().window().maximize();
         waitDriver = new WebDriverWait(driver, TIMEOUT);
         driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
