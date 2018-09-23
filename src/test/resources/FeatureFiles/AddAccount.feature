@@ -8,7 +8,7 @@ Feature: Test to add ANZ(AU) account
   @Add-Account-ANZ
   Scenario: In order to add a ANZ(AU) account
     Given I am on the Home Page "https://www.xero.com/au/" of Website
-    When I enter "tapanagkumar@gmail.com" and "WGVyb18xMjM=" and click on the Login Button 
+    When I enter "tapanagkumar@ymail.com" and "WGVyb18xMjM=" and click on the Login Button 
     And I successfully login
     And Navigate to Bank Accounts page
     And Add an ANZ(AU) Account

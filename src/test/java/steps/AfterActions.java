@@ -24,8 +24,7 @@ public class AfterActions
 
             scenario.embed(screenshotBytes, "image/png");
             }
-
-        SeleniumDriver.tearDown();
+        	SeleniumDriver.tearDown();
         }
     }
 

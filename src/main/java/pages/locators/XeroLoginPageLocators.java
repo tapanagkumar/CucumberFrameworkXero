@@ -56,12 +56,12 @@ public class XeroLoginPageLocators
         using = "/html/body/div[1]/div/div/form/label[2]/div/input"
         )
     public WebElement	inputTwo;
-
-@FindBy(
+    @FindBy(
         how   = How.XPATH,
         using = "//*[@id=\"auth-splashpage\"]/div/div/form/button[1]"
         )
     public WebElement	authsubmitanswersbutton;
     }
+
 
 //~ Formatted by Jindent --- http://www.jindent.com

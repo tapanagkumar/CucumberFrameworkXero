@@ -4,7 +4,10 @@ import java.util.Random;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.testng.Assert.assertEquals;
 
@@ -13,7 +16,7 @@ import com.github.javafaker.IdNumber;
 
 import pages.locators.XeroBankAccountsLocators;
 
-import utils.SeleniumDriver;
+import utils.*;
 
 public class XeroBankAccountsPageActions
     {
@@ -32,11 +35,13 @@ public class XeroBankAccountsPageActions
 
     public void clickAddBnkAccount()
         {
+        SeleniumHelper.isElementEnabled(xeroBankAccountsLocators.AddBankAccounts);
         xeroBankAccountsLocators.AddBankAccounts.click();
         }
 
     public void clickContinue()
         {
+        SeleniumDriver.waitForPageToLoad();
         xeroBankAccountsLocators.Continue.click();
         }
 
@@ -52,6 +57,8 @@ public class XeroBankAccountsPageActions
 
     public void enterAccountName()
         {
+        SeleniumDriver.waitForPageToLoad();
+        SeleniumHelper.isVisableAndClickable(xeroBankAccountsLocators.EnterAccountName);
         xeroBankAccountsLocators.EnterAccountName.sendKeys(business);
         }
 
@@ -70,6 +77,8 @@ public class XeroBankAccountsPageActions
 
     public void searchBank()
         {
+        SeleniumDriver.waitForPageToLoad();
+        SeleniumHelper.isVisableAndClickable(xeroBankAccountsLocators.EnterBankName);
         xeroBankAccountsLocators.EnterBankName.sendKeys(Bank);
         }
 
