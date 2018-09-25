@@ -50,6 +50,7 @@ This project demonstrates adding ANZ bank account inside Xero organisation using
 - The cucumber features goes in the `features` library and should have the ".feature" extension.
 - You can start out by looking at `\src\test\resources\FeatureFiles`.
 
+### Running the tests
 
 - From Command line goto project directory.
 - Run the below command to run the tests in firefox
