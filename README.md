@@ -18,19 +18,6 @@ This project demonstrates adding ANZ bank account inside Xero organisation using
 - Clone respective repository or download zip.
 	- maven : https://github.com/tapanagkumar/CucumberFrameworkXero.git
 
-- To initialize browser navigate to `\src\main\java\utils\SeleniumDriver.java` and change to firefox or chrome
----------------------------------------
-
-	```
-	WebDriverManager.chromedriver().setup();
-         WebDriverManager.firefoxdriver().setup();
-	 final ChromeOptions	chromeOptions  = new ChromeOptions();
-	 final FirefoxOptions	firefoxOptions = new FirefoxOptions();
-	 chromeOptions.setHeadless(true);
-	 firefoxOptions.setHeadless(true);
-	 // driver = new ChromeDriver(chromeOptions);
-        driver = new FirefoxDriver(firefoxOptions);
-	```
 
  ### Directory layout
 ```
@@ -64,9 +51,14 @@ This project demonstrates adding ANZ bank account inside Xero organisation using
 - You can start out by looking at `\src\test\resources\FeatureFiles`.
 
 
-From Command line goto project directory.
-- Use `mvn test` command to run features.
+- From Command line goto project directory.
+- Run the below command to run the tests in firefox
 
+`$ mvn test -Dbrowser=firefox`
+
+- Run the below command to run the tests in Chrome
+
+`$ mvn test -Dbrowser=chrome`
 
 
 ### Results
