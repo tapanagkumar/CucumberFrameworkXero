@@ -19,19 +19,28 @@ public class SeleniumDriver
     private static WebDriver		driver;
     private static WebDriverWait	waitDriver;
 
-    private SeleniumDriver()
+    private SeleniumDriver(String Browser)
         {
-        WebDriverManager.chromedriver().setup();
-        WebDriverManager.firefoxdriver().setup();
+        if (Browser.matches("firefox"))
+            {
+            WebDriverManager.firefoxdriver().setup();
 
-        final ChromeOptions	chromeOptions  = new ChromeOptions();
-        final FirefoxOptions	firefoxOptions = new FirefoxOptions();
+            final FirefoxOptions	firefoxOptions = new FirefoxOptions();
 
-        chromeOptions.setHeadless(true);
-        firefoxOptions.setHeadless(false);
+            firefoxOptions.setHeadless(true);
+            driver = new FirefoxDriver(firefoxOptions);
+            }
 
-         driver = new ChromeDriver(chromeOptions);
-        //driver = new FirefoxDriver(firefoxOptions);
+        if (Browser.matches("chrome"))
+            {
+            WebDriverManager.chromedriver().setup();
+
+            final ChromeOptions	chromeOptions = new ChromeOptions();
+
+            chromeOptions.setHeadless(false);
+            driver = new ChromeDriver(chromeOptions);
+            }
+
         driver.manage().window().maximize();
         waitDriver = new WebDriverWait(driver, TIMEOUT);
         driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
@@ -78,11 +87,31 @@ public class SeleniumDriver
         return driver;
         }
 
+    //https://seleniumjava.com/2017/05/21/how-to-run-scripts-in-a-specific-browser-with-maven/
+    private static String getParameter(String name)
+        {
+        String	value = System.getProperty(name);
+
+        if (value == null)
+            {
+            throw new RuntimeException(name + " is not a parameter!");
+            }
+
+        if (value.isEmpty())
+            {
+            throw new RuntimeException(name + " is empty!");
+            }
+
+        return value;
+        }
+
     public static void setUpDriver()
         {
         if (seleniumDriver == null)
             {
-            seleniumDriver = new SeleniumDriver();
+            String	browserName = getParameter("browser");
+
+            seleniumDriver = new SeleniumDriver(browserName);
             }
         }
     }
