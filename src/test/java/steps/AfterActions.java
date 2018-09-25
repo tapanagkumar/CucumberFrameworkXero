@@ -4,6 +4,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
+import com.assertthat.selenium_shutterbug.core.Shutterbug;
+import com.assertthat.selenium_shutterbug.utils.web.ScrollStrategy;
+
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 
@@ -20,11 +23,17 @@ public class AfterActions
 
         if (scenario.isFailed())
             {
-            byte[]	screenshotBytes = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            // https://github.com/assertthat/selenium-shutterbug/wiki/Examples-of-usage
+            Shutterbug.shootPage(driver, ScrollStrategy.BOTH_DIRECTIONS).save();
 
-            scenario.embed(screenshotBytes, "image/png");
+            /*
+             *       byte[]  screenshotBytes = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+             *
+             *       scenario.embed(screenshotBytes, "image/png");
+             */
             }
-        	SeleniumDriver.tearDown();
+
+        SeleniumDriver.tearDown();
         }
     }
 
