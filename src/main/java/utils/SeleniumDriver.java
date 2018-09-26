@@ -18,6 +18,7 @@ public class SeleniumDriver
     private static SeleniumDriver	seleniumDriver;
     private static WebDriver		driver;
     private static WebDriverWait	waitDriver;
+    static String DefaultBro = "chrome";
 
     private SeleniumDriver(String Browser)
         {
@@ -94,12 +95,14 @@ public class SeleniumDriver
 
         if (value == null)
             {
-            throw new RuntimeException(name + " is not a parameter!");
+            value = DefaultBro;
+        	//throw new RuntimeException(name + " is not a parameter!");
             }
 
         if (value.isEmpty())
             {
-            throw new RuntimeException(name + " is empty!");
+        	value = DefaultBro;
+            //throw new RuntimeException(name + " is empty!");
             }
 
         return value;

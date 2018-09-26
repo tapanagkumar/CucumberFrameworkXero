@@ -23,6 +23,7 @@ public class AfterActions
 
         if (scenario.isFailed())
             {
+        	//https://github.com/assertthat/selenium-shutterbug/wiki/Examples-of-usage
             Shutterbug.shootPage(driver, ScrollStrategy.BOTH_DIRECTIONS).save();
             }
 
