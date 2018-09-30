@@ -33,7 +33,7 @@ public class SeleniumDriver {
 
             final ChromeOptions chromeOptions = new ChromeOptions();
 
-            chromeOptions.setHeadless(false);
+            chromeOptions.setHeadless(true);
             driver = new ChromeDriver(chromeOptions);
         }
 
