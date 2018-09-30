@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class SeleniumDriver {
     public final static int TIMEOUT = 30;
     public final static int PAGE_LOAD_TIMEOUT = 50;
-    static String DefaultBro = "chrome";
+    static String DefaultBrowser = "chrome";
     private static SeleniumDriver seleniumDriver;
     private static WebDriver driver;
     private static WebDriverWait waitDriver;
@@ -80,12 +80,12 @@ public class SeleniumDriver {
         String value = System.getProperty(name);
 
         if (value == null) {
-            value = DefaultBro;
+            value = DefaultBrowser;
             //throw new RuntimeException(name + " is not a parameter!");
         }
 
-        if (value.isEmpty()) {
-            value = DefaultBro;
+        if ("".equals(value)) {
+            value = DefaultBrowser;
             //throw new RuntimeException(name + " is empty!");
         }
 
