@@ -1,97 +1,77 @@
 package pages.actions;
 
-import java.util.Random;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.safari.SafariDriver;
+import com.github.javafaker.Faker;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.locators.XeroBankAccountsLocators;
+import utils.SeleniumDriver;
+import utils.SeleniumHelper;
+
+import java.util.Random;
 
 import static org.testng.Assert.assertEquals;
 
-import com.github.javafaker.Faker;
-import com.github.javafaker.IdNumber;
+public class XeroBankAccountsPageActions {
 
-import pages.locators.XeroBankAccountsLocators;
+    XeroBankAccountsLocators xeroBankAccountsLocators = null;
+    Faker faker = new Faker();
+    Random generator = new Random();
+    String business = faker.name().fullName();
+    long AccountNumber = faker.number().randomNumber();
 
-import utils.*;
-
-public class XeroBankAccountsPageActions
-    {
-   
-    XeroBankAccountsLocators	xeroBankAccountsLocators = null;
-    Faker			faker                    = new Faker();
-    Random			generator                = new Random();
-    String			business                 = faker.name().fullName();
-    long			AccountNumber            = faker.number().randomNumber();
-
-    public XeroBankAccountsPageActions()
-        {
+    public XeroBankAccountsPageActions() {
         this.xeroBankAccountsLocators = new XeroBankAccountsLocators();
         PageFactory.initElements(SeleniumDriver.getDriver(), xeroBankAccountsLocators);
-        }
+    }
 
-    public void clickAddBnkAccount()
-        {
+    public void clickAddBnkAccount() {
         SeleniumHelper.isElementEnabled(xeroBankAccountsLocators.AddBankAccounts);
         xeroBankAccountsLocators.AddBankAccounts.click();
-        }
+    }
 
-    public void clickContinue()
-        {
+    public void clickContinue() {
         SeleniumDriver.waitForPageToLoad();
         xeroBankAccountsLocators.Continue.click();
-        }
+    }
 
-    public void clickOnAccountDropdown()
-        {
+    public void clickOnAccountDropdown() {
         xeroBankAccountsLocators.ClickonAccountTypeMenu.click();
-        }
+    }
 
-    public void clickOnBank()
-        {
+    public void clickOnBank() {
         xeroBankAccountsLocators.ClickonBank.click();
-        }
+    }
 
-    public void enterAccountName()
-        {
+    public void enterAccountName() {
         SeleniumDriver.waitForPageToLoad();
         SeleniumHelper.isVisableAndClickable(xeroBankAccountsLocators.EnterAccountName);
         xeroBankAccountsLocators.EnterAccountName.sendKeys(business);
-        }
+    }
 
-    public void enterAccountNumber()
-        {
+    public void enterAccountNumber() {
         xeroBankAccountsLocators.AccountNumber.sendKeys(Long.toString(AccountNumber));
-        }
+    }
 
-    public void enterBSB()
-        {
+    public void enterBSB() {
         // Generate a Random six digit number and assign it to a variable num'
-        int	BSBNumber = generator.nextInt(900000) + 100000;
+        int BSBNumber = generator.nextInt(900000) + 100000;
 
         xeroBankAccountsLocators.Bsb.sendKeys(Integer.toString(BSBNumber));
-        }
+    }
 
-    public void searchBank(String Bank)
-        {
+    public void searchBank(String Bank) {
         SeleniumDriver.waitForPageToLoad();
         SeleniumHelper.isVisableAndClickable(xeroBankAccountsLocators.EnterBankName);
         xeroBankAccountsLocators.EnterBankName.sendKeys(Bank);
-        }
-
-    public void selectAccountType()
-        {
-        xeroBankAccountsLocators.SelectAccountType.click();
-        }
-
-    public void verifyIfAccountAdded()
-        {
-        assertEquals(business + " has been added.", xeroBankAccountsLocators.CheckifAdded.getText());
-        }
     }
+
+    public void selectAccountType() {
+        xeroBankAccountsLocators.SelectAccountType.click();
+    }
+
+    public void verifyIfAccountAdded() {
+        assertEquals(business + " has been added.", xeroBankAccountsLocators.CheckifAdded.getText());
+    }
+}
 
 
 //~ Formatted by Jindent --- http://www.jindent.com

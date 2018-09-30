@@ -4,6 +4,6 @@
         <encoding>UTF-8</encoding>
         <documentTitle>Cucumber Extent Reports - v1.1.0</documentTitle>
         <reportName>Xero-Report</reportName>
-        <reportHeadline> - v1.1.0</reportHeadline>
+        <reportHeadline>- v1.1.0</reportHeadline>
     </configuration>
 </extentreports>
