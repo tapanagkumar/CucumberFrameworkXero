@@ -31,6 +31,7 @@ public class RunCuke extends AbstractTestNGCucumberTests
     public static void setup()
         {
         // Initiates the extent report and generates the output in the output/Run_<unique timestamp>/report.html file by default.
+            //Will update soon wit something Fancy
         SimpleDateFormat	sdf      = new SimpleDateFormat("ddMMyyyy_hhmmss");
         Date			curDate  = new Date();
         String			strDate  = sdf.format(curDate);
