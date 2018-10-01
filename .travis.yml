@@ -3,4 +3,4 @@ sudo: required
 script: mvn clean verify
 addons:
   chrome: stable
-  firefox: stable
+  firefox: latest
