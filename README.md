@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/tapanagkumar/CucumberFrameworkXero.svg?branch=InitialCommit)](https://travis-ci.com/tapanagkumar/CucumberFrameworkXero)
+
 # CucumberFrameworkXero Example
 
 This project demonstrates adding ANZ bank account inside Xero organisation using Cucumber and/or Selenium tests.
